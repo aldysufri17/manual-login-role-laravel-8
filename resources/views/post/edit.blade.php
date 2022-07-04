@@ -5,10 +5,7 @@
     <form action="{{route('post.update',$posts->id)}}" method="post">
         @csrf
         @method('PUT')
-        <div class="form-group">
-            <label for="name">Nama</label>
-            <input value="{{$posts->name}}" type="text" name="name" class="form-control" id="name">
-        </div>
+        <x-form-input value="{{$posts->name}}" title="Nama" name="name" type="text" />
         <div class="form-group">
             <label for="description">Description</label>
             <textarea class="form-control" name="description" id="description" rows="3">{{$posts->description}}</textarea>

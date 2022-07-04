@@ -4,14 +4,8 @@
     <h3 class="text-center">Form Tambah Akun</h3>
     <form action="{{route('user.store')}}" method="post">
         @csrf
-        <div class="form-group">
-            <label for="name">Nama</label>
-            <input type="text" name="name" class="form-control" id="name">
-        </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" name="email" class="form-control" id="email">
-        </div>
+        <x-form-input title="Nama" autofocus="autofocus" name="name" type="text" />
+        <x-form-input title="Email" name="email" type="email" />
         <div class="form-group">
             <label for="role">Role</label>
             <select name="role" class="form-control" id="role">
@@ -19,10 +13,7 @@
                 <option value="admin">admin</option>
             </select>
         </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" name="password" class="form-control" id="password">
-        </div>
+        <x-form-input title="Password" name="password" type="password" />
         <div class="">
             <button class="btn btn-success float-right" type="submit">Simpan</button>
             <a href="{{route('user.index')}}" class="btn btn-danger float-right mr-3">Batal</a>

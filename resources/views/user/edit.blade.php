@@ -5,14 +5,8 @@
     <form action="{{route('user.update',$users->id)}}" method="post">
         @csrf
         @method('PUT')
-        <div class="form-group">
-            <label for="name">Nama</label>
-            <input type="text" value="{{$users->name}}" name="name" class="form-control" id="name">
-        </div>
-        <div class="form-group">
-            <label for="name">Email</label>
-            <input type="text" name="email" value="{{$users->email}}" class="form-control" id="email">
-        </div>
+        <x-form-input value="{{$users->name}}" title="Nama" name="name" type="text" />
+        <x-form-input value="{{$users->email}}" title="Email" name="email" type="email" />
         <div class="form-group">
             <label for="role">Role</label>
             <select name="role" class="form-control" id="role">
